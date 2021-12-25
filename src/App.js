@@ -20,8 +20,10 @@ function App() {
     }, 3000);
   }
 
-  const toggleMode = () => {
+  const toggleMode = (cls) => {
+    document.body.classList.add('bg-'+cls)
     if (mode==='light') {
+      console.log(cls)
       setMode('dark')
       document.body.style.backgroundColor = '#121416';
       document.body.style.color = '#fff';

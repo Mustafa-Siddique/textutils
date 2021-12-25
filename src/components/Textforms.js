@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {LoremIpsum, loremIpsum} from "lorem-ipsum";
+import {loremIpsum} from "lorem-ipsum";
 
 export default function Textforms(props) {
   const handleUpClick = () => {
@@ -49,14 +49,14 @@ export default function Textforms(props) {
           rows="8"
           placeholder="Enter Text Here...!!!"
         ></textarea>
-        <button className="btn btn-primary my-2" onClick={handleUpClick}>Convert to Uppercase</button>
-        <button className="btn btn-primary m-2" onClick={handleLowClick}>Convert to Lowercase</button>
-        <button className="btn btn-primary m-2" onClick={clear}>Clear</button>
+        <button disabled={text.length===0} className="btn btn-primary my-2" onClick={handleUpClick}>Convert to Uppercase</button>
+        <button disabled={text.length===0} className="btn btn-primary m-2" onClick={handleLowClick}>Convert to Lowercase</button>
+        <button disabled={text.length===0} className="btn btn-primary m-2" onClick={clear}>Clear</button>
         <button className="btn btn-primary m-2" onClick={loremGenerator}>Generate Lorem Ipsum</button>
       </div>
       <div className="container my-5">
         <h2>Your Text Summary</h2>
-        <p>{text.split(' ').length} words & {text.length} Characters</p>
+        <p>{text.split(/\s+/).filter((element) => {return element.length!==0}).length} words & {text.length} Characters</p>
         <p>{(0.008 * text.split(' ').length).toFixed(1)} Minutes Read</p>
       </div>
     </div>

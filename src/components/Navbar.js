@@ -50,11 +50,10 @@ export default function Navbar(props) {
               className="btn-check"
               name="options"
               id="option1"
-              autocomplete="off"
-              onClick={props.toggleMode}
-              checked
+              autoComplete="off"
+              onClick={() => {props.toggleMode('dark')}}
             />
-            <label className="btn btn-dark mx-1" for="option1">
+            <label className="btn btn-dark mx-1" htmlFor="option1">
               Dark Mode
             </label>
 
@@ -63,9 +62,10 @@ export default function Navbar(props) {
               className="btn-check"
               name="options"
               id="option2"
-              autocomplete="off"
+              autoComplete="off"
+              onClick={() => {props.toggleMode('secondary')}}
             />
-            <label className="btn btn-secondary mx-1" for="option2">
+            <label className="btn btn-secondary mx-1" htmlFor="option2">
               Radio
             </label>
 
@@ -74,10 +74,10 @@ export default function Navbar(props) {
               className="btn-check"
               name="options"
               id="option3"
-              autocomplete="off"
-              disabled
+              autoComplete="off"
+              onClick={() => {props.toggleMode('primary')}}
             />
-            <label className="btn btn-success mx-1" for="option3">
+            <label className="btn btn-primary mx-1" htmlFor="option3">
               Disabled
             </label>
 
@@ -86,9 +86,10 @@ export default function Navbar(props) {
               className="btn-check"
               name="options"
               id="option4"
-              autocomplete="off"
+              autoComplete="off"
+              onClick={() => {props.toggleMode('warning')}}
             />
-            <label className="btn btn-warning mx-1" for="option4">
+            <label className="btn btn-warning mx-1" htmlFor="option4">
               Radio
             </label>
           </div>
